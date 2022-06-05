@@ -1,10 +1,12 @@
-import { HomeFeature, HeaderFeature, FooterFeature } from './features'
+import { HomeFeature, HeaderFeature, FooterFeature, PageFeature } from './features'
 
 function App() {
   return (
     <div>
       <HeaderFeature />
-      <HomeFeature />
+      <PageFeature>
+        <HomeFeature />
+      </PageFeature>
       <FooterFeature />
     </div>
   );
