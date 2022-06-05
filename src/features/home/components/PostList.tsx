@@ -1,0 +1,1 @@
+export const PostList = () =><h3></h3> 

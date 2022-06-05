@@ -1,0 +1,1 @@
+export const PostItem = () =><h3></h3> 
