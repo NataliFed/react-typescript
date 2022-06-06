@@ -10,7 +10,7 @@ export const HomeFeature = () => {
        fetch('https://dummyjson.com/posts?limit=10')
        .then(res => res.json())
        .then((data) => {
-           console.log(data, 'data');
+           console.log(data);
            setPosts(data.posts);
        });  
    })
