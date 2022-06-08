@@ -1,4 +1,5 @@
-import { HomeFeature, HeaderFeature, FooterFeature, PageFeature } from './features'
+import { AppRouter } from './common/components';
+import { HeaderFeature, FooterFeature, PageFeature } from './features'
 import { ResetStyles } from './features/global';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <ResetStyles />
         <HeaderFeature />
         <PageFeature>
-          <HomeFeature />
+          <AppRouter />
         </PageFeature>
         <FooterFeature />
     </div>
