@@ -1,13 +1,15 @@
 import { HomeFeature, HeaderFeature, FooterFeature, PageFeature } from './features'
+import { ResetStyles } from './features/global';
 
 function App() {
   return (
     <div>
-      <HeaderFeature />
-      <PageFeature>
-        <HomeFeature />
-      </PageFeature>
-      <FooterFeature />
+      <ResetStyles />
+        <HeaderFeature />
+        <PageFeature>
+          <HomeFeature />
+        </PageFeature>
+        <FooterFeature />
     </div>
   );
 }
