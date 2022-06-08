@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
     item: {id: number; name: string; url: string}
