@@ -7,6 +7,6 @@ export interface PostsInterface {
 
 export interface PaginationInterface {
     limit: number,
-    skip: number,
     total: number,
+    page: number
 }

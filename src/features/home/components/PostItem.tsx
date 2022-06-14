@@ -25,7 +25,10 @@ export const PostItem = ({ post: { id, title, body, } }: Props) => {
                     `}><Link to={`/post/${id}`}>{title}</Link>
 
             </h3>
-            <div>{body}</div>
+            <div css={css`
+                height: 160px;
+                overflow: hidden;
+            `}>{body}</div>
         </div>
     )
 }

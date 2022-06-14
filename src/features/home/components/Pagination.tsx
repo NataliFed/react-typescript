@@ -1,10 +1,11 @@
 import PaginationMUI from '@mui/material/Pagination';
+import { PaginationInterface } from '../interfaces';
 
 interface Props {
-    page: number,
+    pagination: PaginationInterface,
     onChange: (e: React.ChangeEvent<unknown>, value: number) => void
 }
 
-export const Pagination = ({ onChange, page }: Props) => (
-    <PaginationMUI onChange={onChange} page={page} count={10} variant="outlined" shape="rounded" />
+export const Pagination = ({ onChange, pagination:{total, page} }: Props) => (
+    <PaginationMUI onChange={onChange} page={page} count={total} variant="outlined" shape="rounded" />
 )

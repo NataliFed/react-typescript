@@ -1,34 +1,41 @@
-import {useState, useEffect } from 'react'
+import {useState, useEffect, useRef } from 'react'
 import { PostsInterface } from '../interfaces'
 
 export const usePosts = () => {
     const [posts, setPosts] = useState([] as PostsInterface[]);
+    const setIsTotal = useRef(false);
 
-    const [page, setPage] = useState(1);
-    
-    const LIMIT_POSTS = 9;
-    
-
+    const [pagination, setPagination] = useState({
+        limit: 9,
+        total: 10,
+        page: 1
+    })
+        
     const onChangePagination = (e: any, value: number) => {
-        setPage(value)
+        setPagination({...pagination, page: value})
     } 
 
     useEffect(() => {
-        const skip = page === 1 ? 0 : ( page -1 ) * LIMIT_POSTS
+        const {page, limit} = pagination;
+        const nextSkip = page === 1 ? 0 : ( page -1 ) * limit
 
-        fetch(`https://dummyjson.com/posts?limit=${LIMIT_POSTS}&skip=${skip}`)
+        fetch(`https://dummyjson.com/posts?limit=${pagination.limit}&skip=${nextSkip}`)
             .then((res) => res.json())
             .then((data) => {
             setPosts(data.posts);
 
+            if(!setIsTotal.current) {
+                setPagination({...pagination, total: Math.round(data.total / pagination.limit)});
+                setIsTotal.current = true;
+            }
             });  
-    }, [page])
+    }, [pagination.page])
 
 
     
     return {
         posts,
-        page,
+        pagination,
         onChangePagination
     }
 }

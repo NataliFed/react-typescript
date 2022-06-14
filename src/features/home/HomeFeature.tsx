@@ -4,11 +4,11 @@ import { PostList } from './components'
 import { Pagination } from "./components/Pagination";
 
 export const HomeFeature = () => {
-    const { posts, onChangePagination, page } = usePosts();
+    const { posts, onChangePagination, pagination } = usePosts();
 
     return (<div>
         <PostList posts={posts} />
-        <Pagination onChange={onChangePagination} page={page} />
+        <Pagination onChange={onChangePagination} pagination={pagination} />
     </div>
 
     )
