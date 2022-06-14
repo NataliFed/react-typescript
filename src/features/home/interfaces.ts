@@ -4,3 +4,9 @@ export interface PostsInterface {
     body: string,
 }
 
+
+export interface PaginationInterface {
+    limit: number,
+    skip: number,
+    total: number,
+}
