@@ -1,2 +1,2 @@
 export * from './usePosts'
-export * from './useAddPost'
+export * from './useAddPosts'
