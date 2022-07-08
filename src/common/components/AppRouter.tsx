@@ -11,5 +11,6 @@ export const AppRouter = () => (
         <Route path="/" element={<HomeFeature />} />
         <Route path="/contacts" element={<ContactsFeature />} />
         <Route path="/post/:id" element={<PostFeature />} />
+        <Route path="/post/:id/:type" element={<PostFeature />} />
     </Routes>
 )
